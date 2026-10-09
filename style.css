@@ -1,0 +1,97 @@
+/* Dark mode background pattern */
+.dark body {
+  background-color: #0b0c10;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Light mode background pattern */
+body {
+  background-color: #f8fafc;
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Universal Senior-Friendly Typography & Letter Spacing across ALL elements */
+body, p, span, a, button, input, textarea, label, nav {
+  letter-spacing: 0.03em;
+  line-height: 1.6;
+}
+
+/* Clear, legible text sizing for all paragraphs and lists */
+p, span, li, a, input, textarea {
+  font-size: 0.95rem;
+}
+
+/* Navigation button and brand typography sizing */
+.nav-brand, .nav-btn, header nav button {
+  font-size: 0.9rem !important;
+  letter-spacing: 0.035em !important;
+}
+
+h1 {
+  letter-spacing: 0.04em;
+  line-height: 1.15;
+}
+
+h2, h3, h4 {
+  letter-spacing: 0.035em;
+}
+
+/* Accessibility Focus States */
+button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 3px solid #3b82f6;
+  outline-offset: 3px;
+}
+
+/* Entrance animations */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ppt-slide:not(.hidden) {
+  animation: slideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.ppt-slide:not(.hidden) .anim-1 { animation: slideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.06s forwards; opacity: 0; }
+.ppt-slide:not(.hidden) .anim-2 { animation: slideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.12s forwards; opacity: 0; }
+.ppt-slide:not(.hidden) .anim-3 { animation: slideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.18s forwards; opacity: 0; }
+.ppt-slide:not(.hidden) .anim-4 { animation: slideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.24s forwards; opacity: 0; }
+.ppt-slide:not(.hidden) .anim-5 { animation: slideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.30s forwards; opacity: 0; }
+
+/* Welcome Screen Animations */
+@keyframes welcomePulse {
+  0% { transform: scale(0.95); opacity: 0; }
+  50% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(1.02); opacity: 1; }
+}
+
+.welcome-content {
+  animation: welcomePulse 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* 3D ID Card Perspective */
+.card-perspective {
+  perspective: 1000px;
+}
+
+.tilt-card {
+  transition: transform 0.1s ease-out;
+  transform-style: preserve-3d;
+}
+
+.tilt-card.reset {
+  transition: transform 0.5s ease-in-out;
+}

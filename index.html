@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jhunel D Morales - Portfolio</title>
+  <!-- Tailwind CSS CDN with dark mode support -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    }
+  </script>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="text-gray-800 dark:text-gray-300 font-sans h-screen overflow-hidden flex flex-col justify-between p-4 md:px-12 transition-colors duration-300">
+
+  <!-- WELCOME GREETING SCREEN OVERLAY -->
+  <div id="welcome-screen" class="fixed inset-0 bg-neutral-950 text-white z-50 flex flex-col items-center justify-center cursor-pointer transition-all duration-1000" onclick="enterPortfolio()">
+    <div class="welcome-content text-center space-y-3 select-none">
+      <div class="flex justify-center space-x-6 text-neutral-400 text-xl mb-1">
+        <i class="fa-solid fa-code animate-bounce"></i>
+        <i class="fa-solid fa-user animate-bounce" style="animation-delay: 0.1s;"></i>
+        <i class="fa-solid fa-gear animate-bounce" style="animation-delay: 0.2s;"></i>
+      </div>
+      <h1 class="text-5xl md:text-7xl font-extrabold tracking-wider bg-gradient-to-r from-white via-neutral-300 to-neutral-500 bg-clip-text text-transparent">Welcome</h1>
+      <p class="text-xs md:text-sm text-neutral-400 tracking-widest uppercase font-mono animate-pulse">Entering portfolio automatically...</p>
+    </div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <header class="flex justify-between items-center py-2 border-b border-gray-200 dark:border-gray-800 shrink-0">
+    <button onclick="navigateTo('home')" class="nav-brand text-lg md:text-xl font-bold tracking-wider text-gray-900 dark:text-white text-left">
+      jhunel.dev
+    </button>
+
+    <div class="flex items-center space-x-2 md:space-x-3">
+      <nav class="flex space-x-1 md:space-x-2 bg-gray-200/80 dark:bg-neutral-900/90 px-3 py-1 rounded-full border border-gray-300 dark:border-gray-800 font-semibold">
+        <button onclick="navigateTo('home')" id="nav-home" class="nav-btn px-3 py-1 rounded-full bg-gray-900 text-white dark:bg-white dark:text-black transition">Home</button>
+        <button onclick="navigateTo('about')" id="nav-about" class="nav-btn px-3 py-1 rounded-full text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition">About</button>
+        <button onclick="navigateTo('portfolio')" id="nav-portfolio" class="nav-btn px-3 py-1 rounded-full text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition">Portfolio</button>
+        <button onclick="navigateTo('contact')" id="nav-contact" class="nav-btn px-3 py-1 rounded-full text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition">Contact</button>
+      </nav>
+
+      <!-- Dark / Light Theme Toggle Button -->
+      <button onclick="toggleTheme()" id="theme-toggle" class="p-2 rounded-full bg-gray-200 dark:bg-neutral-900 border border-gray-300 dark:border-gray-800 text-gray-700 dark:text-yellow-400 hover:scale-105 transition" title="Toggle Theme">
+        <i id="theme-icon" class="fa-solid fa-moon text-xs"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN SLIDES CONTAINER -->
+  <main class="max-w-6xl mx-auto w-full flex-1 flex items-center justify-center py-2 my-auto overflow-hidden">
+
+    <!-- SLIDE 1: HOME -->
+    <section id="slide-home" class="ppt-slide w-full grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+      <div class="md:col-span-2 space-y-3">
+        <div class="anim-1 inline-flex items-center space-x-2 text-[11px] uppercase tracking-widest bg-gray-200 dark:bg-neutral-900 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full border border-gray-300 dark:border-gray-800 font-medium">
+          <span class="w-2 h-2 bg-green-500 rounded-full animate-ping"></span>
+          <span>Available for projects & internships</span>
+        </div>
+
+        <h1 class="anim-2 text-4xl md:text-6xl font-extrabold text-gray-900 dark:text-white tracking-tight">
+          Web Developer & <br> IT Student
+        </h1>
+
+        <div class="anim-3 space-y-1.5 text-gray-700 dark:text-gray-300 max-w-xl">
+          <p class="font-bold text-sm md:text-base text-gray-900 dark:text-white">2nd Year BS Information Technology Student</p>
+          <p class="leading-relaxed text-gray-600 dark:text-gray-300">Passionate about building responsive web applications, modern user interfaces, and solving practical real-world problems through clean, robust code.</p>
+        </div>
+
+        <div class="anim-4 flex flex-wrap gap-1.5 pt-0.5">
+          <span class="bg-gray-200 dark:bg-neutral-900 text-gray-800 dark:text-gray-200 px-3 py-1 rounded-md border border-gray-300 dark:border-gray-800 font-medium">HTML5 / CSS3</span>
+          <span class="bg-gray-200 dark:bg-neutral-900 text-gray-800 dark:text-gray-200 px-3 py-1 rounded-md border border-gray-300 dark:border-gray-800 font-medium">JavaScript</span>
+          <span class="bg-gray-200 dark:bg-neutral-900 text-gray-800 dark:text-gray-200 px-3 py-1 rounded-md border border-gray-300 dark:border-gray-800 font-medium">Tailwind CSS</span>
+          <span class="bg-gray-200 dark:bg-neutral-900 text-gray-800 dark:text-gray-200 px-3 py-1 rounded-md border border-gray-300 dark:border-gray-800 font-medium">APIs</span>
+        </div>
+
+        <div class="anim-5 pt-1 text-gray-500 dark:text-gray-400 space-y-0.5">
+          <p><i class="fa-solid fa-arrow-right mr-1.5"></i> Use navigation buttons above to explore academic projects</p>
+          <p><i class="fa-solid fa-briefcase mr-1.5"></i> Open to freelance work, collaborations, and IT internships</p>
+        </div>
+      </div>
+
+      <!-- 3D Student ID Card in Rigid Holder Case -->
+      <div class="anim-4 card-perspective flex justify-center">
+        <div id="interactive-card" class="tilt-card relative bg-neutral-900 dark:bg-neutral-950 p-3 pt-5 rounded-3xl border-2 border-neutral-800 shadow-2xl w-56 text-center cursor-pointer select-none">
+          
+          <!-- Lanyard Slot / Hole on Top of Case -->
+          <div class="absolute top-2 left-1/2 -translate-x-1/2 w-8 h-2 bg-neutral-800 dark:bg-neutral-900 rounded-full border border-neutral-700"></div>
+
+          <!-- Rigid Case Inner Bezel Frame -->
+          <div class="bg-neutral-950 p-2 rounded-2xl border border-neutral-800 mt-1.5 shadow-inner">
+            <div class="w-full h-44 bg-gray-900 rounded-xl overflow-hidden relative border border-neutral-800">
+              <img src="profile picture.jpeg" alt="Jhunel D Morales" class="w-full h-full object-cover">
+            </div>
+            
+            <div class="pt-2 pb-0.5 text-center">
+              <p class="text-xs font-bold text-white tracking-wide">Jhunel D Morales</p>
+              <p class="text-[11px] text-neutral-400 font-medium mt-0.5">BSIT - 2nd Year</p>
+            </div>
+          </div>
+          
+          <div class="mt-2 text-[9px] tracking-widest text-neutral-500 uppercase font-semibold">
+            STUDENT ID CASE
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 2: ABOUT -->
+    <section id="slide-about" class="ppt-slide hidden w-full grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+      <div class="md:col-span-2 space-y-3">
+        <span class="anim-1 tracking-widest text-gray-500 uppercase font-semibold block">ABOUT ME & EXPERTISE</span>
+        <h2 class="anim-2 text-2xl md:text-4xl font-bold text-gray-900 dark:text-white">Jhunel D Morales</h2>
+        
+        <p class="anim-3 text-gray-700 dark:text-gray-300 leading-relaxed">
+          My portfolio showcases your skills, abilities, achievements, and projects. It reflects my creativity, technical skills, and deep understanding of web development concepts:
+        </p>
+
+        <!-- Skills Grid List -->
+        <div class="anim-4 grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+          <div class="bg-white/90 dark:bg-neutral-900/80 p-2.5 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
+            <div class="font-bold text-gray-900 dark:text-white mb-0.5 flex items-center">
+              <i class="fa-solid fa-code text-blue-500 mr-1.5"></i> Technical Skills
+            </div>
+            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">Proficient in HTML5, CSS3, JavaScript, Tailwind CSS, API integration, and responsive design.</p>
+          </div>
+
+          <div class="bg-white/90 dark:bg-neutral-900/80 p-2.5 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
+            <div class="font-bold text-gray-900 dark:text-white mb-0.5 flex items-center">
+              <i class="fa-solid fa-paintbrush text-purple-500 mr-1.5"></i> Creativity & UI
+            </div>
+            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">Designing modern dark/light-themed user interfaces, responsive grid layouts, and interactive elements.</p>
+          </div>
+
+          <div class="bg-white/90 dark:bg-neutral-900/80 p-2.5 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
+            <div class="font-bold text-gray-900 dark:text-white mb-0.5 flex items-center">
+              <i class="fa-solid fa-bullseye text-green-500 mr-1.5"></i> Core Abilities
+            </div>
+            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">Strong problem-solving mindset, clean code structuring, and seamless API data handling.</p>
+          </div>
+
+          <div class="bg-white/90 dark:bg-neutral-900/80 p-2.5 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
+            <div class="font-bold text-gray-900 dark:text-white mb-0.5 flex items-center">
+              <i class="fa-solid fa-award text-amber-500 mr-1.5"></i> Key Achievements
+            </div>
+            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">Successfully developed and deployed functional web applications like AuraWeather live on GitHub Pages.</p>
+          </div>
+        </div>
+
+        <div class="anim-5 pt-1">
+          <button onclick="navigateTo('portfolio')" class="bg-gray-900 text-white dark:bg-white dark:text-black px-5 py-2 rounded-full font-bold hover:opacity-90 transition flex items-center space-x-2">
+            <i class="fa-solid fa-eye"></i>
+            <span>View My Project</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- About Me Picture -->
+      <div class="anim-4 flex justify-center">
+        <div class="w-44 h-44 rounded-full border border-gray-300 dark:border-gray-800 overflow-hidden bg-gray-200 dark:bg-neutral-900 p-2 flex items-center justify-center shadow-lg">
+          <img src="profile picture.jpeg" alt="Jhunel D Morales" class="w-full h-full object-cover rounded-full">
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 3: PORTFOLIO SHOWCASE -->
+    <section id="slide-portfolio" class="ppt-slide hidden w-full text-center">
+      <h2 class="anim-1 text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-1">Portfolio Showcase</h2>
+      <p class="anim-2 text-gray-600 dark:text-gray-300 mb-4">Explore my featured project, certifications, and technical stack.</p>
+
+      <!-- Sub Tabs -->
+      <div class="anim-3 inline-flex bg-gray-200 dark:bg-neutral-900 p-1 rounded-full border border-gray-300 dark:border-gray-800 mb-4 font-semibold">
+        <button onclick="switchTab('projects')" id="tab-projects" class="tab-btn px-5 py-1.5 rounded-full bg-gray-900 text-white dark:bg-white dark:text-black transition">Project</button>
+        <button onclick="switchTab('certificates')" id="tab-certificates" class="tab-btn px-5 py-1.5 rounded-full text-gray-700 dark:text-gray-300 transition">Certificates</button>
+        <button onclick="switchTab('tech-stack')" id="tab-tech-stack" class="tab-btn px-5 py-1.5 rounded-full text-gray-700 dark:text-gray-300 transition">Tech Stack</button>
+      </div>
+
+      <!-- Tab Content: Project (Only AuraWeather) -->
+      <div id="content-projects" class="anim-4 tab-content flex justify-center text-left">
+        <div class="bg-white/90 dark:bg-neutral-900/70 border border-gray-200 dark:border-gray-800 rounded-2xl p-4 hover:border-gray-300 dark:hover:border-gray-700 transition flex flex-col justify-between shadow-sm max-w-md w-full">
+          <div>
+            <div class="bg-gray-100 dark:bg-neutral-950 h-36 rounded-xl mb-3 overflow-hidden border border-gray-200 dark:border-gray-800 flex items-center justify-center">
+              <img src="project.jpeg" alt="AuraWeather" class="w-full h-full object-cover">
+            </div>
+
+            <div class="flex flex-wrap gap-1.5 mb-2">
+              <span class="text-[11px] bg-gray-200 dark:bg-neutral-800 text-gray-800 dark:text-gray-200 px-2 py-0.5 rounded border border-gray-300 dark:border-gray-700 font-medium">JavaScript</span>
+              <span class="text-[11px] bg-gray-200 dark:bg-neutral-800 text-gray-800 dark:text-gray-200 px-2 py-0.5 rounded border border-gray-300 dark:border-gray-700 font-medium">Tailwind CSS</span>
+              <span class="text-[11px] bg-gray-200 dark:bg-neutral-800 text-gray-800 dark:text-gray-200 px-2 py-0.5 rounded border border-gray-300 dark:border-gray-700 font-medium">Weather API</span>
+            </div>
+
+            <h3 class="font-bold text-gray-900 dark:text-white mb-1">AuraWeather</h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-3 leading-relaxed text-xs">A sleek, responsive weather application providing real-time forecasts and atmospheric conditions with a clean interactive user interface.</p>
+          </div>
+
+          <div class="flex items-center space-x-2">
+            <a href="https://jhunelmorales561-max.github.io/AuraWeather-/" target="_blank" class="inline-flex items-center font-semibold text-white bg-blue-600 hover:bg-blue-700 px-3.5 py-1.5 rounded-full transition text-xs">
+              Live Demo <i class="fa-solid fa-external-link ml-1.5 text-xs"></i>
+            </a>
+            <button onclick="openModal('auraweather')" class="inline-flex items-center font-semibold text-gray-900 dark:text-white bg-gray-200 dark:bg-neutral-800 px-3 py-1.5 rounded-full hover:bg-gray-300 dark:hover:bg-neutral-700 transition text-xs">
+              Case Study <i class="fa-solid fa-arrow-right ml-1.5 text-xs"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab Content: Certificates -->
+      <div id="content-certificates" class="tab-content hidden flex justify-center text-left">
+        <div class="bg-white/90 dark:bg-neutral-900/70 border border-gray-200 dark:border-gray-800 rounded-2xl p-4 shadow-sm max-w-md w-full">
+          <div class="bg-gray-100 dark:bg-neutral-950 h-28 rounded-xl mb-3 border border-gray-200 dark:border-gray-800 flex flex-col items-center justify-center p-3 text-center">
+            <i class="fa-solid fa-certificate text-3xl text-amber-500 mb-1"></i>
+            <p class="font-bold text-gray-900 dark:text-white">Web Development Fundamentals</p>
+            <p class="text-xs text-gray-500 mt-0.5">BSIT Coursework Certification</p>
+          </div>
+          <h3 class="font-bold text-gray-900 dark:text-white mb-1">Web Development Fundamental Certificate</h3>
+          <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-xs">Issued by Academic Institution - 2024</p>
+        </div>
+      </div>
+
+      <!-- Tab Content: Tech Stack -->
+      <div id="content-tech-stack" class="tab-content hidden flex flex-wrap justify-center gap-3">
+        <div class="bg-white dark:bg-neutral-900 px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-800 flex items-center space-x-2.5 shadow-sm">
+          <i class="fa-brands fa-html5 text-xl text-orange-500"></i>
+          <span class="font-bold text-gray-900 dark:text-white">HTML5</span>
+        </div>
+        <div class="bg-white dark:bg-neutral-900 px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-800 flex items-center space-x-2.5 shadow-sm">
+          <i class="fa-brands fa-css3-alt text-xl text-blue-500"></i>
+          <span class="font-bold text-gray-900 dark:text-white">CSS3</span>
+        </div>
+        <div class="bg-white dark:bg-neutral-900 px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-800 flex items-center space-x-2.5 shadow-sm">
+          <i class="fa-brands fa-js text-xl text-yellow-500 dark:text-yellow-400"></i>
+          <span class="font-bold text-gray-900 dark:text-white">JavaScript</span>
+        </div>
+        <div class="bg-white dark:bg-neutral-900 px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-800 flex items-center space-x-2.5 shadow-sm">
+          <i class="fa-solid fa-cloud-sun text-xl text-cyan-500"></i>
+          <span class="font-bold text-gray-900 dark:text-white">Weather API</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 4: CONTACT & PUBLIC GUESTBOOK -->
+    <section id="slide-contact" class="ppt-slide hidden w-full grid grid-cols-1 md:grid-cols-2 gap-6">
+      
+      <!-- Left Column: Direct Professional Inquiries & Collaboration -->
+      <div class="space-y-3">
+        <div>
+          <h2 class="anim-1 text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">Direct Professional Inquiries</h2>
+          <p class="anim-2 text-gray-600 dark:text-gray-300 text-xs md:text-sm">Use this form strictly for project collaborations, hiring, and IT internship offers.</p>
+        </div>
+
+        <!-- Message Alert Banner -->
+        <div id="contact-alert" class="hidden p-3 rounded-xl border"></div>
+
+        <!-- FORMSPREE CONTACT FORM -->
+        <form id="contact-form" action="https://formspree.io/f/mzedbvwq" method="POST" onsubmit="handleFormspreeSubmit(event)" class="anim-3 space-y-2">
+          <input type="hidden" name="_subject" value="New Portfolio Message from jhunel.dev!">
+          <input type="text" name="_gotcha" style="display:none">
+
+          <div class="relative">
+            <i class="fa-solid fa-user absolute left-3.5 top-3 text-sm text-gray-400"></i>
+            <input type="text" name="name" id="contact-name" placeholder="Your Name" class="w-full bg-white dark:bg-neutral-900 border border-gray-300 dark:border-gray-800 rounded-xl py-2 pl-10 pr-3 text-gray-900 dark:text-white focus:outline-none focus:border-gray-500" required>
+          </div>
+          <div class="relative">
+            <i class="fa-solid fa-envelope absolute left-3.5 top-3 text-sm text-gray-400"></i>
+            <input type="email" name="email" id="contact-email" placeholder="Your Email" class="w-full bg-white dark:bg-neutral-900 border border-gray-300 dark:border-gray-800 rounded-xl py-2 pl-10 pr-3 text-gray-900 dark:text-white focus:outline-none focus:border-gray-500" required>
+          </div>
+          <div class="relative">
+            <i class="fa-solid fa-message absolute left-3.5 top-3 text-sm text-gray-400"></i>
+            <textarea name="message" id="contact-msg" placeholder="Your Message / Proposal" rows="2" class="w-full bg-white dark:bg-neutral-900 border border-gray-300 dark:border-gray-800 rounded-xl py-2 pl-10 pr-3 text-gray-900 dark:text-white focus:outline-none focus:border-gray-500" required></textarea>
+          </div>
+          <button type="submit" id="submit-btn" class="w-full bg-gray-900 text-white dark:bg-white dark:text-black font-bold py-2.5 rounded-xl hover:opacity-90 transition flex items-center justify-center space-x-2">
+            <i class="fa-solid fa-paper-plane"></i>
+            <span>Send Professional Message</span>
+          </button>
+        </form>
+
+        <div class="anim-4 pt-0.5">
+          <p class="font-semibold text-gray-700 dark:text-gray-300 mb-1">Connect With Me</p>
+          <div class="grid grid-cols-2 gap-2 font-medium text-xs">
+            <a href="https://ph.linkedin.com/in/morales-jhunel-21a3a6441" target="_blank" class="flex items-center space-x-2 bg-white dark:bg-neutral-900 p-2 rounded-xl border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 transition"><i class="fa-brands fa-linkedin text-blue-500"></i> <span>LinkedIn</span></a>
+            <a href="https://github.com/jhunelmorales561-max" target="_blank" class="flex items-center space-x-2 bg-white dark:bg-neutral-900 p-2 rounded-xl border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 transition"><i class="fa-brands fa-github text-gray-900 dark:text-white"></i> <span>GitHub</span></a>
+            <a href="https://www.instagram.com/jhunel.morales?stkn=MTAzMmV6c2Zwam43NQ==" target="_blank" class="flex items-center space-x-2 bg-white dark:bg-neutral-900 p-2 rounded-xl border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 transition"><i class="fa-brands fa-instagram text-pink-500"></i> <span>Instagram</span></a>
+            <a href="https://www.facebook.com/share/14d84FG4cuQ/" target="_blank" class="flex items-center space-x-2 bg-white dark:bg-neutral-900 p-2 rounded-xl border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 transition"><i class="fa-brands fa-facebook text-blue-600"></i> <span>Facebook</span></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Public Guestbook & Anti-Troll Disclaimer -->
+      <div class="anim-3 bg-white/80 dark:bg-neutral-900/50 border border-gray-200 dark:border-gray-800 rounded-2xl p-4 flex flex-col justify-between shadow-sm">
+        <div>
+          <h3 class="font-bold text-gray-900 dark:text-white mb-0.5">Public Guestbook</h3>
+          <p class="text-gray-600 dark:text-gray-300 text-xs md:text-sm mb-2">Leave a friendly greeting or public feedback for other visitors!</p>
+
+          <!-- Anti-Troll and Respect Precaution Notice -->
+          <div class="bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-900/60 p-2 rounded-xl mb-2 flex items-start space-x-2 text-[11px] text-amber-800 dark:text-amber-300">
+            <i class="fa-solid fa-shield-halved mt-0.5 shrink-0"></i>
+            <span><strong>Code of Conduct:</strong> Please keep comments respectful. Spam, profanity, or inappropriate language will be filtered and removed.</span>
+          </div>
+
+          <form id="comment-form" onsubmit="addComment(event)" class="space-y-2">
+            <input type="text" id="comment-name" placeholder="Your Name" class="w-full bg-white dark:bg-neutral-900 border border-gray-300 dark:border-gray-800 rounded-xl py-1.5 px-3 text-gray-900 dark:text-white focus:outline-none" required>
+            <textarea id="comment-text" placeholder="Your Greeting / Public Note" rows="2" class="w-full bg-white dark:bg-neutral-900 border border-gray-300 dark:border-gray-800 rounded-xl py-1.5 px-3 text-gray-900 dark:text-white focus:outline-none" required></textarea>
+            
+            <button type="submit" class="w-full bg-gray-200 dark:bg-neutral-800 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white font-bold py-2 rounded-xl hover:bg-gray-300 dark:hover:bg-neutral-700 transition">
+              Post to Guestbook
+            </button>
+          </form>
+
+          <div id="comments-list" class="mt-3 space-y-2 max-h-24 overflow-y-auto pr-1">
+            <div class="bg-white/90 dark:bg-neutral-900/90 p-2.5 rounded-xl border border-gray-200 dark:border-gray-800">
+              <span class="font-bold text-gray-900 dark:text-white">Jhunel D Morales <span class="bg-gray-200 dark:bg-gray-800 text-[10px] px-1 py-0.5 rounded text-gray-700 dark:text-gray-300 ml-1 font-bold">PINNED</span></span>
+              <p class="text-gray-600 dark:text-gray-300 mt-0.5 leading-relaxed">Welcome to my guestbook! Drop a friendly note or greeting below.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- CASE STUDY MODAL -->
+  <div id="project-modal" class="hidden fixed inset-0 bg-black/60 dark:bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+    <div class="bg-white dark:bg-neutral-900 border border-gray-200 dark:border-gray-800 w-full max-w-md rounded-2xl p-5 relative shadow-2xl space-y-3">
+      <button onclick="closeModal()" class="absolute top-3 right-3 text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white text-base">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <h3 id="modal-title" class="text-xl font-bold text-gray-900 dark:text-white">Project Case Study</h3>
+
+      <div class="space-y-2.5 text-gray-700 dark:text-gray-300 max-h-[50vh] overflow-y-auto pr-2 leading-relaxed">
+        <div>
+          <h4 class="font-bold uppercase text-xs tracking-wider text-blue-600 dark:text-blue-400 mb-0.5">Problem Statement</h4>
+          <p id="modal-problem" class="text-gray-600 dark:text-gray-300 leading-relaxed"></p>
+        </div>
+        <div>
+          <h4 class="font-bold uppercase text-xs tracking-wider text-green-600 dark:text-green-400 mb-0.5">Key Features</h4>
+          <p id="modal-features" class="text-gray-600 dark:text-gray-300 leading-relaxed"></p>
+        </div>
+        <div>
+          <h4 class="font-bold uppercase text-xs tracking-wider text-purple-600 dark:text-purple-400 mb-0.5">What I Learned</h4>
+          <p id="modal-learned" class="text-gray-600 dark:text-gray-300 leading-relaxed"></p>
+        </div>
+      </div>
+
+      <div class="pt-2 flex justify-end">
+        <button onclick="closeModal()" class="bg-gray-900 text-white dark:bg-white dark:text-black font-bold px-4 py-1.5 rounded-full hover:opacity-90 transition">
+          Close Case Study
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="text-center py-2 border-t border-gray-200 dark:border-gray-800 text-gray-500 font-medium shrink-0">
+    © 2026 Jhunel D Morales. All rights reserved.
+  </footer>
+
+  <!-- External JavaScript File -->
+  <script src="script.js"></script>
+
+</body>
+</html>
